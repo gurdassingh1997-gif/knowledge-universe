@@ -292,10 +292,10 @@ export default function KnowledgeHub() {
       item.topic.toLowerCase().includes(search.toLowerCase())
   );
 
-  const wiki = (topic) =>
+  const wiki = (topic: string) =>
     `https://en.wikipedia.org/wiki/${topic.replace(/ /g, "_")}`;
 
-  const google = (topic, type) =>
+  const google = (topic: string, type: string) =>
     `https://www.google.com/search?q=${encodeURIComponent(topic + " " + type)}`;
 
   const research = (topic) =>
