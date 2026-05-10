@@ -298,7 +298,7 @@ export default function KnowledgeHub() {
   const google = (topic: string, type: string) =>
     `https://www.google.com/search?q=${encodeURIComponent(topic + " " + type)}`;
 
-  const research = (topic) =>
+  const research = (topic: string) =>
     `https://scholar.google.com/scholar?q=${encodeURIComponent(topic)}`;
 
   return (
