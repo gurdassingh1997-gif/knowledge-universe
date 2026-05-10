@@ -4,7 +4,16 @@ import { useMemo, useState } from "react";
 
 export default function KnowledgeHub() {
   const [search, setSearch] = useState("");
-  const [activeTab, setActiveTab] = useState("roadmap");
+  const [activeTab, setActiveTab] = useState("roadmap");<button
+  onClick={() => setActiveTab("nasa")}
+  className={`px-6 py-3 rounded-2xl transition ${
+    activeTab === "nasa"
+      ? "bg-cyan-500 text-black"
+      : "bg-zinc-900 text-white hover:bg-zinc-800"
+  }`}
+>
+  🚀 NASA
+</button>
 
   const roadmap = [
     {
@@ -348,10 +357,13 @@ export default function KnowledgeHub() {
 
         <div className="mx-auto flex max-w-7xl flex-wrap gap-3 px-6 pb-5">
           {[
-            ["roadmap", "Roadmap"],
-            ["topics", "Topics"],
-            ["hvac", "HVAC Learning"],
-          ].map(([id, label]) => (
+  ["roadmap", "Roadmap"],
+  ["topics", "Topics"],
+  ["hvac", "HVAC Learning"],
+  ["nasa", "NASA News"],
+  ["docs", "Documentaries"],
+  ["scienceNews", "Science News"],
+].map(([id, label]) => (
             <button
               key={id}
               onClick={() => setActiveTab(id)}
@@ -602,7 +614,759 @@ export default function KnowledgeHub() {
               </a>
             </div>
           </section>
-        )}
+        )}{/* ADVANCED HVAC MASTER LIBRARY */}
+<div>
+  <h3 className="mb-6 text-5xl font-black text-cyan-300">
+    🚀 Advanced HVAC Master Library
+  </h3>
+
+  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+    {[
+      {
+        title: "ASHRAE",
+        desc: "Global HVAC engineering standards and research.",
+        link: "https://www.ashrae.org/",
+      },
+
+      {
+        title: "ISHRAE",
+        desc: "Indian Society of Heating Refrigeration and Air Conditioning Engineers.",
+        link: "https://ishrae.in/",
+      },
+
+      {
+        title: "SMACNA",
+        desc: "Duct construction and HVAC installation standards.",
+        link: "https://www.smacna.org/",
+      },
+
+      {
+        title: "AHRI",
+        desc: "HVAC equipment certification and performance standards.",
+        link: "https://www.ahrinet.org/",
+      },
+
+      {
+        title: "AMCA",
+        desc: "Air movement and fan engineering standards.",
+        link: "https://www.amca.org/",
+      },
+
+      {
+        title: "NFPA",
+        desc: "Fire and smoke control standards.",
+        link: "https://www.nfpa.org/",
+      },
+
+      {
+        title: "Adicot",
+        desc: "Advanced cleanroom and containment engineering.",
+        link: "https://www.adicot.com/",
+      },
+
+      {
+        title: "CDC Ventilation",
+        desc: "Healthcare and hospital ventilation guidance.",
+        link: "https://www.cdc.gov/",
+      },
+
+      {
+        title: "Carrier",
+        desc: "Chiller and advanced HVAC technologies.",
+        link: "https://www.carrier.com/",
+      },
+
+      {
+        title: "Daikin VRV",
+        desc: "VRV/VRF advanced HVAC systems.",
+        link: "https://www.daikin.com/",
+      },
+
+      {
+        title: "Trane",
+        desc: "Industrial cooling and smart HVAC systems.",
+        link: "https://www.trane.com/",
+      },
+
+      {
+        title: "Johnson Controls",
+        desc: "BMS and smart building technologies.",
+        link: "https://www.johnsoncontrols.com/",
+      },
+
+    ].map((item) => (
+      <a
+        key={item.title}
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-3xl border border-cyan-500/20 bg-zinc-900 p-6 hover:scale-[1.02] transition"
+      >
+        <h4 className="mb-3 text-2xl font-bold text-cyan-300">
+          {item.title}
+        </h4>
+
+        <p className="text-slate-300">
+          {item.desc}
+        </p>
+      </a>
+    ))}
+
+  </div>
+</div>
+
+{/* HVAC FUTURE TECHNOLOGIES */}
+<div>
+  <h3 className="mb-6 text-5xl font-black text-purple-300">
+    ⚡ Future HVAC Technologies
+  </h3>
+
+  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+    {[
+      {
+        title: "AI Controlled HVAC",
+        link: "https://www.johnsoncontrols.com/",
+      },
+
+      {
+        title: "Digital Twin",
+        link: "https://www.autodesk.com/solutions/digital-twin",
+      },
+
+      {
+        title: "CFD Airflow Simulation",
+        link: "https://www.ansys.com/",
+      },
+
+      {
+        title: "Net Zero Buildings",
+        link: "https://www.energy.gov/",
+      },
+
+      {
+        title: "Magnetic Bearing Chillers",
+        link: "https://www.danfoss.com/",
+      },
+
+      {
+        title: "Smart Sensors & IoT",
+        link: "https://www.honeywell.com/",
+      },
+
+      {
+        title: "Hydrogen Cooling",
+        link: "https://www.iea.org/",
+      },
+
+      {
+        title: "Radiant Cooling",
+        link: "https://www.rehva.eu/",
+      },
+
+      {
+        title: "Liquid Cooling",
+        link: "https://www.vertiv.com/",
+      },
+
+    ].map((item) => (
+      <a
+        key={item.title}
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-3xl border border-purple-500/20 bg-purple-500/10 p-6 hover:scale-[1.03] transition"
+      >
+        <h4 className="text-2xl font-bold text-purple-300">
+          {item.title}
+        </h4>
+      </a>
+    ))}
+
+  </div>
+</div>
+
+<section className="mt-12 space-y-10">
+
+  {/* HVAC NEWS */}
+  <div>
+    <h3 className="mb-6 text-4xl font-black text-cyan-300">
+      📰 HVAC Industry News
+    </h3>
+
+    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+      {[
+        {
+          title: "ASHRAE News",
+          link: "https://www.ashrae.org/",
+          desc: "Latest HVAC standards, research, and engineering news.",
+        },
+        {
+          title: "ACHR News",
+          link: "https://www.achrnews.com/",
+          desc: "Global HVAC industry updates and projects.",
+        },
+        {
+          title: "HVACR Business",
+          link: "https://hvacrbusiness.com/",
+          desc: "Commercial HVAC and refrigeration updates.",
+        },
+      ].map((item) => (
+        <a
+          key={item.title}
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-3xl border border-cyan-500/20 bg-cyan-500/10 p-6 hover:scale-[1.02] transition"
+        >
+          <h4 className="text-2xl font-bold text-cyan-300">
+            {item.title}
+          </h4>
+
+          <p className="mt-3 text-slate-300">
+            {item.desc}
+          </p>
+        </a>
+      ))}
+
+    </div>
+  </div>
+
+  {/* HVAC STANDARDS */}
+  <div>
+    <h3 className="mb-6 text-4xl font-black text-purple-300">
+      📚 HVAC Standards & Codes
+    </h3>
+
+    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+      {[
+        {
+          title: "ASHRAE Standards",
+          link: "https://www.ashrae.org/technical-resources/standards-and-guidelines",
+        },
+        {
+          title: "NBC 2016",
+          link: "https://bis.gov.in/",
+        },
+        {
+          title: "SMACNA",
+          link: "https://www.smacna.org/",
+        },
+        {
+          title: "ISHRAE",
+          link: "https://ishrae.in/",
+        },
+      ].map((item) => (
+        <a
+          key={item.title}
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-3xl border border-purple-500/20 bg-purple-500/10 p-6 text-center hover:scale-[1.02] transition"
+        >
+          <h4 className="text-xl font-bold text-purple-300">
+            {item.title}
+          </h4>
+        </a>
+      ))}
+
+    </div>
+  </div>
+
+  {/* HVAC SPECIALIZED INDUSTRIES */}
+<div>
+  <h3 className="mb-6 text-5xl font-black text-emerald-300">
+    🏭 Specialized HVAC Industries
+  </h3>
+
+  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+    {[
+      {
+        title: "Pharma HVAC",
+        link: "https://www.ashrae.org/",
+      },
+
+      {
+        title: "Semiconductor HVAC",
+        link: "https://www.semiconductor-digest.com/",
+      },
+
+      {
+        title: "Battery Manufacturing HVAC",
+        link: "https://www.energy.gov/",
+      },
+
+      {
+        title: "Hospital HVAC",
+        link: "https://www.cdc.gov/",
+      },
+
+      {
+        title: "Operation Theater HVAC",
+        link: "https://www.who.int/",
+      },
+
+      {
+        title: "Data Center Cooling",
+        link: "https://uptimeinstitute.com/",
+      },
+
+      {
+        title: "Industrial Ventilation",
+        link: "https://www.smacna.org/",
+      },
+
+      {
+        title: "Refinery HVAC",
+        link: "https://www.api.org/",
+      },
+
+      {
+        title: "Nuclear HVAC",
+        link: "https://www.iaea.org/",
+      },
+
+      {
+        title: "Food Industry HVAC",
+        link: "https://www.fda.gov/",
+      },
+
+      {
+        title: "Laboratory Ventilation",
+        link: "https://www.aiha.org/",
+      },
+
+      {
+        title: "Automobile HVAC",
+        link: "https://www.sae.org/",
+      },
+
+    ].map((item) => (
+      <a
+        key={item.title}
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-3xl border border-emerald-500/20 bg-emerald-500/10 p-5 text-center text-xl font-bold text-emerald-300 hover:scale-[1.03] transition"
+      >
+        {item.title}
+      </a>
+    ))}
+
+  </div>
+</div>
+
+  {/* HVAC DOCUMENTARIES */}
+  <div>
+    <h3 className="mb-6 text-4xl font-black text-yellow-300">
+      🎬 HVAC Technical Videos
+    </h3>
+
+    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+      {[
+        {
+          title: "HVAC Basics",
+          link: "https://www.youtube.com/results?search_query=hvac+engineering+basics",
+        },
+        {
+          title: "Cleanroom HVAC",
+          link: "https://www.youtube.com/results?search_query=cleanroom+hvac+design",
+        },
+        {
+          title: "Data Center Cooling",
+          link: "https://www.youtube.com/results?search_query=data+center+cooling+system",
+        },
+      ].map((item) => (
+        <a
+          key={item.title}
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-3xl border border-yellow-500/20 bg-yellow-500/10 p-6 hover:scale-[1.02] transition"
+        >
+          <h4 className="text-2xl font-bold text-yellow-300">
+            {item.title}
+          </h4>
+        </a>
+      ))}
+
+    </div>
+  </div>
+
+  {/* RESEARCH */}
+  <div>
+    <h3 className="mb-6 text-4xl font-black text-pink-300">
+      🔬 HVAC Research & Papers
+    </h3>
+
+    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+      {[
+        {
+          title: "Google Scholar HVAC",
+          link: "https://scholar.google.com/scholar?q=HVAC",
+        },
+        {
+          title: "ASHRAE Journal",
+          link: "https://www.ashrae.org/technical-resources/ashrae-journal",
+        },
+        {
+          title: "ScienceDirect HVAC",
+          link: "https://www.sciencedirect.com/topics/engineering/hvac-system",
+        },
+      ].map((item) => (
+        <a
+          key={item.title}
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-3xl border border-pink-500/20 bg-pink-500/10 p-6 hover:scale-[1.02] transition"
+        >
+          <h4 className="text-2xl font-bold text-pink-300">
+            {item.title}
+          </h4>
+        </a>
+      ))}
+
+    </div>
+  </div>{/* BIM & DIGITAL ENGINEERING */}
+<div>
+  <h3 className="mb-6 text-5xl font-black text-blue-300">
+    🏗️ BIM & Digital Engineering
+  </h3>
+
+  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+    {[
+      {
+        title: "Autodesk Revit",
+        link: "https://www.autodesk.com/products/revit/",
+      },
+
+      {
+        title: "BIM 360 / ACC",
+        link: "https://construction.autodesk.com/",
+      },
+
+      {
+        title: "Navisworks",
+        link: "https://www.autodesk.com/products/navisworks/",
+      },
+
+      {
+        title: "Revit Families",
+        link: "https://www.bimobject.com/",
+      },
+
+      {
+        title: "Dynamo for Revit",
+        link: "https://dynamobim.org/",
+      },
+
+      {
+        title: "BIM Coordination",
+        link: "https://www.autodesk.com/solutions/bim",
+      },
+
+      {
+        title: "Clash Detection",
+        link: "https://www.autodesk.com/products/navisworks/",
+      },
+
+      {
+        title: "Digital Twin",
+        link: "https://www.autodesk.com/solutions/digital-twin",
+      },
+
+    ].map((item) => (
+      <a
+        key={item.title}
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-3xl border border-blue-500/20 bg-blue-500/10 p-6 hover:scale-[1.03] transition"
+      >
+        <h4 className="text-2xl font-bold text-blue-300">
+          {item.title}
+        </h4>
+      </a>
+    ))}
+
+  </div>
+</div>{/* HVAC CALCULATIONS */}
+<div>
+  <h3 className="mb-6 text-5xl font-black text-yellow-300">
+    📐 HVAC Calculations & Formulas
+  </h3>
+
+  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+    {[
+      {
+        title: "Heat Load Calculation",
+        link: "https://www.engineeringtoolbox.com/",
+      },
+
+      {
+        title: "Psychrometric Chart",
+        link: "https://www.linric.com/psychrometric-chart/",
+      },
+
+      {
+        title: "Duct Sizing",
+        link: "https://ductulator.com/",
+      },
+
+      {
+        title: "Pipe Sizing",
+        link: "https://www.engineeringtoolbox.com/",
+      },
+
+      {
+        title: "ACPH Calculation",
+        link: "https://www.pharmaguideline.com/",
+      },
+
+      {
+        title: "Static Pressure",
+        link: "https://www.engineeringtoolbox.com/",
+      },
+
+      {
+        title: "Chiller Calculation",
+        link: "https://www.carrier.com/",
+      },
+
+      {
+        title: "Pump Head Calculation",
+        link: "https://www.engineeringtoolbox.com/pump-head-pressure-d_663.html",
+      },
+
+      {
+        title: "Cooling Tower Calculation",
+        link: "https://www.spxcooling.com/",
+      },
+
+    ].map((item) => (
+      <a
+        key={item.title}
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-3xl border border-yellow-500/20 bg-yellow-500/10 p-6 hover:scale-[1.03] transition"
+      >
+        <h4 className="text-2xl font-bold text-yellow-300">
+          {item.title}
+        </h4>
+      </a>
+    ))}
+
+  </div>
+</div>{/* HVAC FORMULAS */}
+<div>
+  <h3 className="mb-6 text-5xl font-black text-pink-300">
+    🧮 HVAC Engineering Formulas
+  </h3>
+
+  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+    {[
+      "CFM = Heat Load / (1.08 × ΔT)",
+      "TR = 12000 BTU/hr",
+      "ACPH = CFM × 60 / Room Volume",
+      "ESP = Static Pressure Loss",
+      "Pump Head = Pressure / Density",
+      "Velocity = CFM / Area",
+      "Sensible Heat = 1.08 × CFM × ΔT",
+      "Latent Heat = 0.68 × CFM × ΔGrains",
+      "Water Flow = TR × 2.4 / ΔT",
+    ].map((item) => (
+      <div
+        key={item}
+        className="rounded-3xl border border-pink-500/20 bg-pink-500/10 p-6 text-xl font-bold text-pink-300"
+      >
+        {item}
+      </div>
+    ))}
+
+  </div>
+</div>{/* HVAC PROJECT WORKFLOW */}
+<div>
+  <h3 className="mb-6 text-5xl font-black text-cyan-300">
+    ⚙️ HVAC Project Workflow
+  </h3>
+
+  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+    {[
+      "Client Requirement",
+      "Basis of Design",
+      "Heat Load Calculation",
+      "Equipment Selection",
+      "Duct Routing",
+      "Pipe Routing",
+      "BIM Coordination",
+      "Clash Detection",
+      "Shop Drawings",
+      "BOQ Preparation",
+      "Site Execution",
+      "Testing & Commissioning",
+    ].map((item) => (
+      <div
+        key={item}
+        className="rounded-3xl border border-cyan-500/20 bg-cyan-500/10 p-5 text-center text-xl font-bold text-cyan-300"
+      >
+        {item}
+      </div>
+    ))}
+
+  </div>
+</div>
+
+</section>{activeTab === "nasa" && (
+  <section className="space-y-8">
+
+    <h2 className="text-5xl font-black text-cyan-300">
+      🚀 NASA & Space Exploration
+    </h2>
+
+    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+      {[
+        {
+          title: "NASA Official",
+          link: "https://www.nasa.gov/",
+          desc: "Latest space missions and discoveries.",
+        },
+        {
+          title: "Space.com",
+          link: "https://www.space.com/",
+          desc: "Live space and astronomy news.",
+        },
+        {
+          title: "ESA Space Agency",
+          link: "https://www.esa.int/",
+          desc: "European space exploration updates.",
+        },
+      ].map((item) => (
+        <a
+          key={item.title}
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-3xl border border-cyan-500/20 bg-cyan-500/10 p-6 hover:scale-[1.02] transition"
+        >
+          <h3 className="text-2xl font-bold text-cyan-300">
+            {item.title}
+          </h3>
+
+          <p className="mt-3 text-slate-300">
+            {item.desc}
+          </p>
+        </a>
+      ))}
+
+    </div>
+
+  </section>
+)}{activeTab === "docs" && (
+  <section className="space-y-8">
+
+    <h2 className="text-5xl font-black text-purple-300">
+      🎬 Scientific Documentaries
+    </h2>
+
+    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+      {[
+        {
+          title: "Cosmos",
+          link: "https://www.youtube.com/results?search_query=cosmos+documentary",
+          desc: "Universe and cosmology documentary.",
+        },
+        {
+          title: "Quantum Physics",
+          link: "https://www.youtube.com/results?search_query=quantum+physics+documentary",
+          desc: "Quantum mechanics explained.",
+        },
+        {
+          title: "Black Holes",
+          link: "https://www.youtube.com/results?search_query=black+hole+documentary",
+          desc: "Explore black holes and gravity.",
+        },
+      ].map((item) => (
+        <a
+          key={item.title}
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-3xl border border-purple-500/20 bg-purple-500/10 p-6 hover:scale-[1.02] transition"
+        >
+          <h3 className="text-2xl font-bold text-purple-300">
+            {item.title}
+          </h3>
+
+          <p className="mt-3 text-slate-300">
+            {item.desc}
+          </p>
+        </a>
+      ))}
+
+    </div>
+
+  </section>
+)}{activeTab === "scienceNews" && (
+  <section className="space-y-8">
+
+    <h2 className="text-5xl font-black text-yellow-300">
+      📰 Live Science News
+    </h2>
+
+    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+      {[
+        {
+          title: "Google Science News",
+          link: "https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqYUdjU0FtVnVLQUFQAQ",
+          desc: "Latest global science updates.",
+        },
+        {
+          title: "Nature Journal",
+          link: "https://www.nature.com/news",
+          desc: "Scientific research and discoveries.",
+        },
+        {
+          title: "Scientific American",
+          link: "https://www.scientificamerican.com/",
+          desc: "Science and technology articles.",
+        },
+      ].map((item) => (
+        <a
+          key={item.title}
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-3xl border border-yellow-500/20 bg-yellow-500/10 p-6 hover:scale-[1.02] transition"
+        >
+          <h3 className="text-2xl font-bold text-yellow-300">
+            {item.title}
+          </h3>
+
+          <p className="mt-3 text-slate-300">
+            {item.desc}
+          </p>
+        </a>
+      ))}
+
+    </div>
+
+  </section>
+)}
       </main>
 
       <footer className="mt-20 border-t border-white/10 py-10 text-center text-slate-400">
